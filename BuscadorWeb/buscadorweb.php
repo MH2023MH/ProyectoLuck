@@ -39,7 +39,9 @@ include 'C:\xampp\htdocs\LinuxDataBaseWeb\Principal\title.html';
         <!-- <button type="submit">Buscar</button> -->
     </form>
 
-    <div id="resultadosBusqueda"></div>
+    <div id="resultadosBusqueda">
+        
+    </div>
 
 
     <script>
