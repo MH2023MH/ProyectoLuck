@@ -109,9 +109,9 @@ if (isset($_SESSION['login_error'])) {
     </section> -->
 
 
-    <div class="center-button">
+    <!-- <div class="center-button">
         <a href="#" class="cta-button" onclick="openLoginModal()">¡Registrate ahora!</a>
-    </div>
+    </div> -->
 
     <div style="height: 100px;"></div>
     <footer style="text-align: center; position: fixed; bottom: 0; width: 100%; height: 5%;">
@@ -128,7 +128,7 @@ if (isset($_SESSION['login_error'])) {
 
 
     <!-- Ventana modal de login -->
-    <div id="loginModal" class="modal">
+    <!-- <div id="loginModal" class="modal">
         <div class="modal-content">
             <h3>Login</h3>
             <form action="/LinuxDataBaseWeb/auth_login.php" method="POST" onsubmit="console.log('Form submitted.');">
@@ -142,13 +142,13 @@ if (isset($_SESSION['login_error'])) {
             
             <div class="login-button-container">
                 <?php
-                if ($login_button == '') {
-                    // Mostrar información del usuario autenticado con Google, si lo deseas mantener
-                } else {
-                    echo '<div class="login-button-container">';
-                    echo $login_button;
-                    echo '</div>';
-                }
+                // if ($login_button == '') {
+                //     // Mostrar información del usuario autenticado con Google, si lo deseas mantener
+                // } else {
+                //     echo '<div class="login-button-container">';
+                //     echo $login_button;
+                //     echo '</div>';
+                // }
                 ?>
             </div>
 
@@ -157,7 +157,7 @@ if (isset($_SESSION['login_error'])) {
 
             <button onclick="closeLoginModal()">Cerrar</button>
         </div>
-    </div>
+    </div> -->
 
 
 
