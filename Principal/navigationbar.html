@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-custom navbar-mainbg">
+<!-- <nav class="navbar navbar-expand-custom navbar-mainbg">
     <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fa-solid fa-bars"></i>
     </button>
@@ -16,11 +16,38 @@
             </li>
         </ul>
     </div>
+</nav> -->
+
+<!-- Barra de navegación -->
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+            
+            <li class="nav-item">
+                <a id="inicio-link" class="nav-link" href="\LinuxDataBaseWeb\Principal\paginaprincipal.php"><i class="fa-solid fa-house"></i>Quienes somos</a>
+            </li>
+            <li class="nav-item">
+                <a id="buscador-link" class="nav-link" href="\LinuxDataBaseWeb\BuscadorWeb\buscadorweb.php"><i class="fa-solid fa-magnifying-glass"></i>Abrir buscador de comandos</a>
+            </li>
+            <?php
+            // Verificar si el usuario está autenticado
+            if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
+                echo '<li class="nav-item">';
+                echo '<a id="perfil-link" class="nav-link" href="/LinuxDataBaseWeb/Principal/perfilusuario.php"><i class="fa-solid fa-user"></i>Perfil</a>';
+                echo '</li>';
+                echo '<li class="nav-item">';
+                echo '<a id="logout-link" class="nav-link" href="/LinuxDataBaseWeb/logout.php"><i class="fa-solid fa-sign-out"></i>Salir</a>';
+                echo '</li>';
+            } else {
+                echo '<li class="nav-item">';
+                echo '<a id="login-link" class="nav-link" href="/LinuxDataBaseWeb/Principal/login.php"><i class="fa-solid fa-right-to-bracket"></i>Ingresar</a>';
+                echo '</li>';
+            }
+            ?>
+        </ul>
+    </div>
 </nav>
-
-
-
-
-
-
-

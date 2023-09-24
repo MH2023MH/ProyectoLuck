@@ -1,7 +1,4 @@
 <?php
-include 'navigationbar.html';
-include 'title.html';
-
 // Incluir la lógica de autenticación de Google
 include('../auth_google.php');
 
@@ -53,6 +50,10 @@ if (isset($_SESSION['login_error'])) {
         <a href="#" class="button" onclick="openLoginModal()">ingresar</a>
     </div> -->
 
+    <?php
+    include 'navigationbar.html';
+    include 'title.html';
+    ?>
     <!-- Contenido de la página -->
     <header class="paginaprincipal">
         <h2>Linux Unified Commands Kit</h2>    
@@ -64,7 +65,7 @@ if (isset($_SESSION['login_error'])) {
         <h2 class="informacionPP">Nuestro Sitio</h2>
         <p>
             Nuestro sitio web es una plataforma versátil diseñada para entusiastas y profesionales de Linux. 
-            Ofrecemos una amplia gama de recursos que te permitirán aprovechar al máximo tu experiencia con Linux.
+            Ofrecemos una amplia enciclopedia que te permitira aprovechar al máximo tu experiencia con Linux.
         </p>
         <p>
             ¿Necesitas acceder rápidamente a comandos de Linux específicos? Con nuestra herramienta de búsqueda, 
@@ -109,7 +110,7 @@ if (isset($_SESSION['login_error'])) {
 
 
     <div class="center-button">
-        <a href="#" class="cta-button" onclick="openLoginModal()">¡Obtener Ahora!</a>
+        <a href="#" class="cta-button" onclick="openLoginModal()">¡Registrate ahora!</a>
     </div>
 
     <div style="height: 100px;"></div>
