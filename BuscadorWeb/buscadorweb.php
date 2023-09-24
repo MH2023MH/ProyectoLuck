@@ -1,6 +1,18 @@
 <?php
-include 'C:\xampp\htdocs\LinuxDataBaseWeb\Principal\navigationbar.html';
-include 'C:\xampp\htdocs\LinuxDataBaseWeb\Principal\title.html';
+
+// Incluir la lógica de autenticación de Google
+include('../auth_google.php');
+
+// Incluir la lógica de verificación de usuario
+include('../auth_login.php');
+
+
+// Verificar si hay un mensaje de error en la sesión
+if (isset($_SESSION['login_error'])) {
+    echo '<script>alert("' . $_SESSION['login_error'] . '");</script>';
+    unset($_SESSION['login_error']); // Limpiar el mensaje de error para no mostrarlo en futuras cargas de la página
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +39,10 @@ include 'C:\xampp\htdocs\LinuxDataBaseWeb\Principal\title.html';
 
 </head>
 <body class="buscadorweb">
-    
+    <?php
+    include 'C:\xampp\htdocs\LinuxDataBaseWeb\Principal\navigationbar.html';
+    include 'C:\xampp\htdocs\LinuxDataBaseWeb\Principal\title.html';
+    ?>
     <!-- <div class="navbar">
         <a href="/LinuxDataBaseWeb/Principal/paginaprincipal.php" class="boton-blanco">Volver pagina principal</a>
         

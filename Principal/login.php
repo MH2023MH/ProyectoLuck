@@ -30,7 +30,7 @@ include 'C:\xampp\htdocs\LinuxDataBaseWeb\Principal\title.html'
     <section class="login">
         <div class="form-box">
             <div class="form-value">
-                <form action="">
+                <!-- <form action="">
                     <h2>Login</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
@@ -50,7 +50,33 @@ include 'C:\xampp\htdocs\LinuxDataBaseWeb\Principal\title.html'
                     <div class="register">
                         <p>Don't have a account <a href="#">Register</a></p>
                     </div>
+                </form> -->
+
+
+                <form action="/LinuxDataBaseWeb/auth_login.php" method="POST" onsubmit="console.log('Form submitted.');">
+                    <h2>Login</h2>
+                    <div class="inputbox">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <input type="text" id="username" name="username" required>
+                        <label for="username">Usuario:</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" id="password" name="password" required>
+                        <label for="password">Contraseña:</label>
+                    </div>
+                    <div class="forget">
+                        <label for=""><input type="checkbox">Remember Me  <a href="#">Forget Password</a></label>
+                      
+                    </div>
+                    <button type="submit">Ingresar</button>
+                    <div class="register">
+                        <p class="register-text">¿Aún no tienes cuenta? <a href="registrarcuenta.php">Registrate</a></p>
+                    </div>
                 </form>
+
+
+
             </div>
         </div>
     </section>
