@@ -51,8 +51,8 @@ if (isset($_SESSION['login_error'])) {
     </div> -->
 
     <?php
-    include 'navigationbar.html';
-    include 'title.html';
+    include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\navigationbar.html';
+    include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title.html';
     ?>
     <!-- Contenido de la página -->
     <header class="paginaprincipal">
@@ -85,7 +85,7 @@ if (isset($_SESSION['login_error'])) {
 
 
     <?php
-    include 'carousel.html';
+    include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\carousel.html';
     ?>
 
     <!-- <section class="features">

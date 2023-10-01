@@ -45,8 +45,8 @@ $nombreUsuario = $_SESSION['username'];
 </head>
 <body class="perfilusuario">
     <?php
-    include 'navigationbar.html';
-    include 'title.html';
+    include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\navigationbar.html';
+    include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title.html';
     ?>
     <header>
         <h1>Bienvenido, <?php echo $nombreUsuario; ?>!</h1>
@@ -61,6 +61,13 @@ $nombreUsuario = $_SESSION['username'];
     <footer>
         &copy; <?php echo date("Y"); ?> LinuxWorld. Todos los derechos reservados.
     </footer>
+
+    <script>
+        $(document).ready(function() {
+            // Agrega la clase "active" al enlace "Inicio"
+            $('#perfil-link').addClass('active');
+        });
+    </script>
 </body>
 </html>
 
