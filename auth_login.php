@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['loggedin'] = true;
         $_SESSION['username'] = $user['usuario'];
         $_SESSION['authenticated'] = true; // Nuevo
-        header('Location: /LinuxDataBaseWeb/Principal/perfilusuario.php');
+        header('Location: /LinuxDataBaseWeb/LoginRegisterPerfil/perfilusuario.php');
         exit();
     } else {
         // Usuario o contraseña incorrectos

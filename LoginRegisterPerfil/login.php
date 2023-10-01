@@ -1,6 +1,6 @@
 <?php
-include 'navigationbar.html';
-include 'C:\xampp\htdocs\LinuxDataBaseWeb\Principal\title.html'
+include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\navigationbar.html';
+include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title.html'
 
 ?>
 
