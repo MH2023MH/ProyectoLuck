@@ -49,7 +49,7 @@ if (isset($_SESSION['login_error'])) {
         <a href="#" class="button" onclick="openLoginModal()">ingresar</a>
     </div> -->
     <form id="formularioBusqueda">
-        <label for="busqueda">Buscar:</label>
+        <label for="busqueda">Busca tu comando aqui:</label>
         <input type="text" name="busqueda" id="busqueda" required>
         <!-- <button type="submit">Buscar</button> -->
     </form>
@@ -64,6 +64,27 @@ if (isset($_SESSION['login_error'])) {
             // Agrega la clase "active" al enlace "Inicio"
             $('#buscador-link').addClass('active');
         });
+    </script>
+
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script>
+    window.botpressWebChat.init({
+        "composerPlaceholder": "Chat with Linux Consultor",
+        "botConversationDescription": "This bot will help you with your Linux doubts",
+        "botId": "c44b463a-3175-4776-a2ae-5307b2adfbb6",
+        "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+        "messagingUrl": "https://messaging.botpress.cloud",
+        "clientId": "c44b463a-3175-4776-a2ae-5307b2adfbb6",
+        "lazySocket": true,
+        "botName": "Linux Consultor",
+        "avatarUrl": "https://th.bing.com/th/id/OIG.d0K0jttFyQjnNxdcBTjv?pid=ImgGn",
+        "frontendVersion": "v1",
+        "useSessionStorage": true,
+        "enableConversationDeletion": true,
+        "showPoweredBy": true,
+        "theme": "prism",
+        "themeColor": "#2563eb"
+    });
     </script>
 
 </body>
