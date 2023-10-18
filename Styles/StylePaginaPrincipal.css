@@ -1,0 +1,88 @@
+
+/* 
+███████╗██╗░░░██╗███████╗███╗░░██╗████████╗███████╗░██████╗
+██╔════╝██║░░░██║██╔════╝████╗░██║╚══██╔══╝██╔════╝██╔════╝
+█████╗░░██║░░░██║█████╗░░██╔██╗██║░░░██║░░░█████╗░░╚█████╗░
+██╔══╝░░██║░░░██║██╔══╝░░██║╚████║░░░██║░░░██╔══╝░░░╚═══██╗
+██║░░░░░╚██████╔╝███████╗██║░╚███║░░░██║░░░███████╗██████╔╝
+╚═╝░░░░░░╚═════╝░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═════╝░ */
+
+
+/* Vincula la fuente personalizada */
+/* @font-face {
+    font-family: 'Glitch Smasher'; 
+    src: url('Fonts/glitch-smasher-font/GlitchSmasherDemo-K7KZZ.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+} */
+
+
+@font-face {
+    font-family: 'Angas Bold'; 
+    src: url('Fonts/angas/angas_v3_bold_italic.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* 
+██████╗░░█████╗░░██████╗░██╗███╗░░██╗░█████╗░
+██╔══██╗██╔══██╗██╔════╝░██║████╗░██║██╔══██╗
+██████╔╝███████║██║░░██╗░██║██╔██╗██║███████║
+██╔═══╝░██╔══██║██║░░╚██╗██║██║╚████║██╔══██║
+██║░░░░░██║░░██║╚██████╔╝██║██║░╚███║██║░░██║
+╚═╝░░░░░╚═╝░░╚═╝░╚═════╝░╚═╝╚═╝░░╚══╝╚═╝░░╚═╝
+
+██████╗░██████╗░██╗███╗░░██╗░█████╗░██╗██████╗░░█████╗░██╗░░░░░
+██╔══██╗██╔══██╗██║████╗░██║██╔══██╗██║██╔══██╗██╔══██╗██║░░░░░
+██████╔╝██████╔╝██║██╔██╗██║██║░░╚═╝██║██████╔╝███████║██║░░░░░
+██╔═══╝░██╔══██╗██║██║╚████║██║░░██╗██║██╔═══╝░██╔══██║██║░░░░░
+██║░░░░░██║░░██║██║██║░╚███║╚█████╔╝██║██║░░░░░██║░░██║███████╗
+╚═╝░░░░░╚═╝░░╚═╝╚═╝╚═╝░░╚══╝░╚════╝░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝ */
+
+
+
+
+/*Eestilos de: paginaprincipal.php*/
+body.paginaprincipal {
+    font-family: 'angas bold', monospace;
+    /* font-family: Arial, sans-serif; */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+header.paginaprincipal {
+    background-color: black;
+    padding: 1px;
+    text-align: center;
+    color: white;
+}
+
+section.informacionPP {
+    background-color: white;
+    padding: 40px;
+    max-width: 1800px; /* Establece un ancho máximo */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+}
+
+
+section.informacionPP > div {
+    flex: 1;
+}
+
+
+p {
+    font-size: 18px;
+}
+
+
+section.informacionPP img {
+    width: 300px; /* Ajusta el valor según el tamaño deseado */
+    height: auto; /* Mantén la proporción original de la imagen */
+}

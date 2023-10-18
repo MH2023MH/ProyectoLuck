@@ -1,0 +1,117 @@
+
+/* 
+███████╗██╗░░░██╗███████╗███╗░░██╗████████╗███████╗░██████╗
+██╔════╝██║░░░██║██╔════╝████╗░██║╚══██╔══╝██╔════╝██╔════╝
+█████╗░░██║░░░██║█████╗░░██╔██╗██║░░░██║░░░█████╗░░╚█████╗░
+██╔══╝░░██║░░░██║██╔══╝░░██║╚████║░░░██║░░░██╔══╝░░░╚═══██╗
+██║░░░░░╚██████╔╝███████╗██║░╚███║░░░██║░░░███████╗██████╔╝
+╚═╝░░░░░░╚═════╝░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═════╝░ */
+
+
+/* Vincula la fuente personalizada */
+/* @font-face {
+    font-family: 'Glitch Smasher'; 
+    src: url('Fonts/glitch-smasher-font/GlitchSmasherDemo-K7KZZ.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+} */
+
+
+@font-face {
+    font-family: 'Angas Bold'; 
+    src: url('Fonts/angas/angas_v3_bold_italic.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* 
+██████╗░██╗░░░██╗░██████╗░█████╗░░█████╗░██████╗░░█████╗░██████╗░  ░██╗░░░░░░░██╗███████╗██████╗░
+██╔══██╗██║░░░██║██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ░██║░░██╗░░██║██╔════╝██╔══██╗
+██████╦╝██║░░░██║╚█████╗░██║░░╚═╝███████║██║░░██║██║░░██║██████╔╝  ░╚██╗████╗██╔╝█████╗░░██████╦╝
+██╔══██╗██║░░░██║░╚═══██╗██║░░██╗██╔══██║██║░░██║██║░░██║██╔══██╗  ░░████╔═████║░██╔══╝░░██╔══██╗
+██████╦╝╚██████╔╝██████╔╝╚█████╔╝██║░░██║██████╔╝╚█████╔╝██║░░██║  ░░╚██╔╝░╚██╔╝░███████╗██████╦╝
+╚═════╝░░╚═════╝░╚═════╝░░╚════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ░░░╚═╝░░░╚═╝░░╚══════╝╚═════╝░ */
+
+
+/* buscador web */
+
+body.buscadorweb {
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+h1.buscadorweb {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Glitch Smasher',sans-serif;
+}
+
+
+#formularioBusqueda {
+    text-align: center;
+}
+
+#busqueda {
+    width: 300px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#resultadosBusqueda {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Estilo para cada resultado */
+.resultado {
+    background-color: white;
+    border: 5px solid white;
+    margin: 10px;
+    padding: 10px;
+    min-width: 100px;
+    border-radius: 10px; /* Agregar esquinas redondeadas */
+}
+
+.command {
+    font-weight: bold;
+}
+
+.tipo {
+    color: #007bff;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+/* Estilo para los botones de login y register */
+.navbar a.button {
+    background-color: black;
+    border-radius: 20px;
+}
+
+.navbar .boton-blanco {
+    background-color: black;
+    padding: 8px 16px; /* Ajusta el relleno según tus preferencias */
+    float: left; /* Alinea el botón a la izquierda */
+    margin-right: 10px; /* Agrega un margen a la derecha si lo deseas */
+    border-radius: 20px;
+}
+
+.navbar a.button:hover {
+    background-color: #45a049;
+}
+
+

@@ -1,0 +1,93 @@
+
+/* 
+███████╗██╗░░░██╗███████╗███╗░░██╗████████╗███████╗░██████╗
+██╔════╝██║░░░██║██╔════╝████╗░██║╚══██╔══╝██╔════╝██╔════╝
+█████╗░░██║░░░██║█████╗░░██╔██╗██║░░░██║░░░█████╗░░╚█████╗░
+██╔══╝░░██║░░░██║██╔══╝░░██║╚████║░░░██║░░░██╔══╝░░░╚═══██╗
+██║░░░░░╚██████╔╝███████╗██║░╚███║░░░██║░░░███████╗██████╔╝
+╚═╝░░░░░░╚═════╝░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═════╝░ */
+
+
+/* Vincula la fuente personalizada */
+/* @font-face {
+    font-family: 'Glitch Smasher'; 
+    src: url('Fonts/glitch-smasher-font/GlitchSmasherDemo-K7KZZ.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+} */
+
+
+@font-face {
+    font-family: 'Angas Bold'; 
+    src: url('Fonts/angas/angas_v3_bold_italic.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* 
+██████╗░███████╗░██████╗░██╗░██████╗████████╗██████╗░░█████╗░██████╗░
+██╔══██╗██╔════╝██╔════╝░██║██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗
+██████╔╝█████╗░░██║░░██╗░██║╚█████╗░░░░██║░░░██████╔╝███████║██████╔╝
+██╔══██╗██╔══╝░░██║░░╚██╗██║░╚═══██╗░░░██║░░░██╔══██╗██╔══██║██╔══██╗
+██║░░██║███████╗╚██████╔╝██║██████╔╝░░░██║░░░██║░░██║██║░░██║██║░░██║
+╚═╝░░╚═╝╚══════╝░╚═════╝░╚═╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝
+
+░█████╗░██╗░░░██╗███████╗███╗░░██╗████████╗░█████╗░
+██╔══██╗██║░░░██║██╔════╝████╗░██║╚══██╔══╝██╔══██╗
+██║░░╚═╝██║░░░██║█████╗░░██╔██╗██║░░░██║░░░███████║
+██║░░██╗██║░░░██║██╔══╝░░██║╚████║░░░██║░░░██╔══██║
+╚█████╔╝╚██████╔╝███████╗██║░╚███║░░░██║░░░██║░░██║
+░╚════╝░░╚═════╝░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚═╝░░╚═╝ */
+
+
+
+/* Estilos pagina: registrarcuenta.php */
+body.registrarcuenta {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.success-message {
+    display: none;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+
+
+
+

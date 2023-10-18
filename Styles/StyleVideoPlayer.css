@@ -1,0 +1,41 @@
+
+/* 
+██╗░░░██╗██╗██████╗░███████╗░█████╗░  ██████╗░██╗░░░░░░█████╗░██╗░░░██╗███████╗██████╗░
+██║░░░██║██║██╔══██╗██╔════╝██╔══██╗  ██╔══██╗██║░░░░░██╔══██╗╚██╗░██╔╝██╔════╝██╔══██╗
+╚██╗░██╔╝██║██║░░██║█████╗░░██║░░██║  ██████╔╝██║░░░░░███████║░╚████╔╝░█████╗░░██████╔╝
+░╚████╔╝░██║██║░░██║██╔══╝░░██║░░██║  ██╔═══╝░██║░░░░░██╔══██║░░╚██╔╝░░██╔══╝░░██╔══██╗
+░░╚██╔╝░░██║██████╔╝███████╗╚█████╔╝  ██║░░░░░███████╗██║░░██║░░░██║░░░███████╗██║░░██║
+░░░╚═╝░░░╚═╝╚═════╝░╚══════╝░╚════╝░  ╚═╝░░░░░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝ */
+
+.video-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 300px; /* Ancho del reproductor */
+    background-color: rgba(0, 0, 0, 0.7); /* Color de fondo */
+    padding: 10px;
+    z-index: 9999; /* Asegura que esté en la parte superior de otros elementos */
+    transition: 0.3s; /* Agrega una transición suave para los cambios de posición */
+}
+
+.video-player video {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos para los controles del video (ajusta según tus necesidades) */
+.video-player video::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 10px;
+}
+
+.video-player video::-webkit-media-controls-play-button,
+.video-player video::-webkit-media-controls-pause-button {
+    color: #fff;
+}
+
+.video-player video::-webkit-media-controls-current-time-display,
+.video-player video::-webkit-media-controls-time-remaining-display {
+    color: #fff;
+}
