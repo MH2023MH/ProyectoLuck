@@ -42,15 +42,37 @@ body.buscadorweb {
     background-color: black;
 }
 
-h1.buscadorweb {
-    text-align: center;
-    font-size: 50px;
-    font-family: 'Glitch Smasher',sans-serif;
-}
-
-
+/* Style para label 1 e input */
 #formularioBusqueda {
     text-align: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 400px;
+    margin: 0 auto;
+  }
+  
+  #formularioBusqueda label {
+    margin-bottom: 5px;
+  }
+  
+  #formularioBusqueda input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+
+/* --------------------------------*/
+
+
+
+/* Styles para lo que se crea al usar el input */
+
+.h2Resultados {
+    text-align: center;
+    color: white;
 }
 
 #busqueda {
@@ -81,6 +103,12 @@ h1.buscadorweb {
 .tipo {
     color: #007bff;
 }
+
+/* ----------------------------*/
+
+
+
+
 
 /* Estilos para la barra de navegación */
 .navbar {

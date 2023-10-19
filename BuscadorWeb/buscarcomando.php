@@ -36,7 +36,7 @@ $resultado = $conexion->query($consulta);
 
 // Construye la respuesta HTML con los resultados
 if ($resultado->num_rows > 0) {
-    echo "<h2 class='resultados_busqueda'>Resultados de la búsqueda:</h2>";
+    echo "<h2 class='h2Resultados'>Resultados de la búsqueda:</h2>";
     echo '<div id="resultadosBusqueda" class="flex-container">';
     while ($fila = $resultado->fetch_assoc()) {
         echo '<div class="resultado">';

@@ -50,7 +50,7 @@ if (isset($_SESSION['login_error'])) {
         
         <a href="#" class="button" onclick="openLoginModal()">ingresar</a>
     </div> -->
-    <form id="formularioBusqueda">
+    <form id="formularioBusqueda" clase="formularioBusqueda">
         <label for="busqueda">Busca tu comando aqui:</label>
         <input type="text" name="busqueda" id="busqueda" required>
         <!-- <button type="submit">Buscar</button> -->
