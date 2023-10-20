@@ -47,7 +47,7 @@ if ($resultado->num_rows > 0) {
     }
     echo '</div>';
 } else {
-    echo "No se encontraron resultados.";
+    echo "<h2 class='h2Resultados'>No se encontraron resultados</h2>";
 }
 
 
