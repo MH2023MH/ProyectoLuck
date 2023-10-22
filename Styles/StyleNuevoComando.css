@@ -1,0 +1,118 @@
+
+/* 
+███████╗██╗░░░██╗███████╗███╗░░██╗████████╗███████╗░██████╗
+██╔════╝██║░░░██║██╔════╝████╗░██║╚══██╔══╝██╔════╝██╔════╝
+█████╗░░██║░░░██║█████╗░░██╔██╗██║░░░██║░░░█████╗░░╚█████╗░
+██╔══╝░░██║░░░██║██╔══╝░░██║╚████║░░░██║░░░██╔══╝░░░╚═══██╗
+██║░░░░░╚██████╔╝███████╗██║░╚███║░░░██║░░░███████╗██████╔╝
+╚═╝░░░░░░╚═════╝░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═════╝░ */
+
+
+/* Vincula la fuente personalizada */
+/* @font-face {
+    font-family: 'Glitch Smasher'; 
+    src: url('Fonts/glitch-smasher-font/GlitchSmasherDemo-K7KZZ.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+} */
+
+
+@font-face {
+    font-family: 'Angas Bold'; 
+    src: url('Fonts/angas/angas_v3_bold_italic.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*
+
+███╗░░██╗██╗░░░██╗███████╗██╗░░░██╗░█████╗░  ░█████╗░░█████╗░███╗░░░███╗░█████╗░███╗░░██╗██████╗░░█████╗░
+████╗░██║██║░░░██║██╔════╝██║░░░██║██╔══██╗  ██╔══██╗██╔══██╗████╗░████║██╔══██╗████╗░██║██╔══██╗██╔══██╗
+██╔██╗██║██║░░░██║█████╗░░╚██╗░██╔╝██║░░██║  ██║░░╚═╝██║░░██║██╔████╔██║███████║██╔██╗██║██║░░██║██║░░██║
+██║╚████║██║░░░██║██╔══╝░░░╚████╔╝░██║░░██║  ██║░░██╗██║░░██║██║╚██╔╝██║██╔══██║██║╚████║██║░░██║██║░░██║
+██║░╚███║╚██████╔╝███████╗░░╚██╔╝░░╚█████╔╝  ╚█████╔╝╚█████╔╝██║░╚═╝░██║██║░░██║██║░╚███║██████╔╝╚█████╔╝
+╚═╝░░╚══╝░╚═════╝░╚══════╝░░░╚═╝░░░░╚════╝░  ░╚════╝░░╚════╝░╚═╝░░░░░╚═╝╚═╝░░╚═╝╚═╝░░╚══╝╚═════╝░░╚════╝░ */
+
+/* Estilos perfilusuario.php */
+
+body.perfilusuario {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+#notification {
+    display: none;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+/* Estilo para centrar el formulario y aplicar fondo blanco y bordes redondeados */
+form {
+    max-width: 500px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centra horizontalmente el formulario */
+    background-color: #ffffff; /* Fondo blanco */
+    padding: 20px; /* Espacio interior */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilo para los campos de entrada y etiquetas */
+input[type="text"],
+textarea,
+select {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espacio interior */
+    margin-bottom: 10px; /* Margen inferior entre campos */
+    border: 1px solid #ccc; /* Borde con color gris */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo para el botón de envío */
+input[type="submit"] {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto */
+    padding: 10px 20px; /* Espacio interior */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+/* Estilo para la notificación */
+.alert {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px; /* Espacio superior */
+}

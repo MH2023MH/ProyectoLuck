@@ -38,7 +38,8 @@
 /* buscador web */
 
 body.buscadorweb {
-    font-family: Arial, sans-serif;
+    font-family: 'angas bold', monospace;
+    /* font-family: Arial, sans-serif; */
     background-color: black;
 }
 
