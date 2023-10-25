@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['nombre'] = $user['nombre']; // Asumiendo que el campo se llama "nombre" en la base de datos
 
         $_SESSION['authenticated'] = true; // Nuevo
-        header('Location: /LinuxDataBaseWeb/LoginRegisterPerfil/perfilusuario.php');
+        header('Location: /LinuxDataBaseWeb/SolicitudesUsuario/solicitudesactuales.php');
         exit();
     } else {
         // Usuario o contraseña incorrectos
