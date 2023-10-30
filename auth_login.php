@@ -44,6 +44,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['nombre'] = $user['nombre']; // Asumiendo que el campo se llama "nombre" en la base de datos
 
         $_SESSION['authenticated'] = true; // Nuevo
+
+        // Actualizar la fecha de última conexión
+        $sql_actualizar_ultima_conexion = "UPDATE usuarios SET fecha_ultima_conexion = NOW() WHERE usuario = '$username'";
+        mysqli_query($conexion, $sql_actualizar_ultima_conexion);
+
+
         header('Location: /LinuxDataBaseWeb/SolicitudesUsuario/solicitudesactuales.php');
         exit();
     } else {
@@ -57,18 +63,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     mysqli_close($conexion);
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

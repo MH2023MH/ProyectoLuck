@@ -31,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error_registro = true;
     } else {
         // Preparar la consulta SQL para insertar los datos en la tabla "usuarios"
-        $sql = "INSERT INTO usuarios (nombre, apellido, correo, contrasena, genero, fecha_nacimiento, usuario)
-                VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$genero', '$fecha_nacimiento', '$usuario')";
+        $sql = "INSERT INTO usuarios (nombre, apellido, correo, contrasena, genero, fecha_nacimiento, usuario, fecha_registro, fecha_ultima_conexion)
+        VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$genero', '$fecha_nacimiento', '$usuario', NOW(), NOW())";
 
         // Ejecutar la consulta
         if (mysqli_query($conexion, $sql)) {
@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php elseif ($registro_exitoso): ?>
             <script>
                 alert("Usuario registrado. ¡Bienvenido, <?php echo htmlspecialchars($nombre); ?>!");
-                window.location.href = 'paginaprincipal.php';
+                window.location.href = '../Principal/paginaprincipal.php';
             </script>
         <?php else: ?>
             <script>
