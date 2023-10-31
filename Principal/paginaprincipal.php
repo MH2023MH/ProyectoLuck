@@ -28,6 +28,7 @@ if (isset($_SESSION['login_error'])) {
     <link rel="stylesheet" type="text/css" href="../Styles/StyleVideoPlayer.css">
     <link rel="stylesheet" type="text/css" href="../Styles/StyleCarousel.css">
     <link rel="stylesheet" type="text/css" href="../Styles/StyleTitle.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/Stylestitle2.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -52,11 +53,12 @@ if (isset($_SESSION['login_error'])) {
     <?php
     include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\navigationbar.html';
     include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title.html';
+    // include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title2.html';
     ?>
 
     <!-- Contenido de la página -->
     <header class="paginaprincipal">
-        <h2>Linux Unified Commands Kit</h2>    
+        <h1>Linux Unified Commands Kit</h1>
         <p>Tu plataforma de ayuda para Linux y sus distribuciones</p>
     </header>
 
