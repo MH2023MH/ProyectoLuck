@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contrasena = $_POST['contrasena'];
     $genero = $_POST['genero'];
     $fecha_nacimiento = $_POST['fecha_nacimiento'];
+    $type_id= 1;
 
     // Conectar a la base de datos
     $conexion = mysqli_connect('localhost', 'root', '', 'linuxdatabase');
@@ -31,8 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error_registro = true;
     } else {
         // Preparar la consulta SQL para insertar los datos en la tabla "usuarios"
-        $sql = "INSERT INTO usuarios (nombre, apellido, correo, contrasena, genero, fecha_nacimiento, usuario, fecha_registro, fecha_ultima_conexion)
-        VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$genero', '$fecha_nacimiento', '$usuario', NOW(), NOW())";
+        $sql = "INSERT INTO usuarios (nombre, apellido, correo, contrasena, genero, fecha_nacimiento, usuario, Type_id, fecha_registro, fecha_ultima_conexion)
+        VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$genero', '$fecha_nacimiento', '$usuario','$type_id', NOW(), NOW())";
 
         // Ejecutar la consulta
         if (mysqli_query($conexion, $sql)) {
