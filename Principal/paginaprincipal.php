@@ -49,9 +49,17 @@ if (isset($_SESSION['login_error'])) {
 <body class="paginaprincipal"> 
 
     <!-- Incluir: barra de navegacion, titulo personalizado. -->
-
     <?php
     include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\navigationbar.html';
+    
+    // include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title2.html';
+    ?>
+    <div style="background-color: white; text-align: center;">
+            <!-- Aquí puedes poner tu imagen -->
+            <img src="\LinuxDataBaseWeb\images\LogoDuocLuck.png" alt="mascota de la plataforma">
+        </div>
+    <?php
+    
     include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title.html';
     // include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title2.html';
     ?>
@@ -65,7 +73,7 @@ if (isset($_SESSION['login_error'])) {
 
     
     <!-- seccion informativa: info de la pagina con imagen de la mascota al medio -->
-    <section class="informacionPP">
+    <!-- <section class="informacionPP">
         <div>
             <div>
                 <p>
@@ -81,7 +89,7 @@ if (isset($_SESSION['login_error'])) {
             </div>
         </div>
         <div>
-            <!-- Aquí puedes poner tu imagen -->
+            
             <img src="\LinuxDataBaseWeb\images\luck.jpg" alt="mascota de la plataforma">
         </div>
         <div>
@@ -98,7 +106,7 @@ if (isset($_SESSION['login_error'])) {
                 </p>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
 

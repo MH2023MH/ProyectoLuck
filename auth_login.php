@@ -1,4 +1,3 @@
-
 <?php
 // auth_login.php
 
@@ -42,8 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Agregar el nombre del usuario a la sesión
         $_SESSION['nombre'] = $user['nombre']; // Asumiendo que el campo se llama "nombre" en la base de datos
+        $_SESSION['id'] = $user['id'];
 
-        $_SESSION['authenticated'] = true; // Nuevo
+        $_SESSION['authenticated'] = true;
 
         // Actualizar la fecha de última conexión
         $sql_actualizar_ultima_conexion = "UPDATE usuarios SET fecha_ultima_conexion = NOW() WHERE usuario = '$username'";
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: /LinuxDataBaseWeb/Principal/paginaprincipal.php');
     }
 
-
+    
     // Cerrar la conexión a la base de datos
     mysqli_close($conexion);
 }

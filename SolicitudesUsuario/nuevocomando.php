@@ -18,7 +18,16 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
 
 // Obtener el nombre de usuario de la sesión
 $nombreUsuario = $_SESSION['username'];
-$nombre = $_SESSION['nombre']; // Asumiendo que el campo se llama "nombre" en el formulario de registro
+$nombre = $_SESSION['nombre'];
+$usuario_id = isset($_SESSION['id']) ? $_SESSION['id'] : null;
+
+// Verificar si el usuario está correctamente autenticado
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $usuario_id === null) {
+    // Redirige o muestra un mensaje de error
+    die('Error: Usuario no autenticado correctamente.');
+}
+
+
 
 // Cerrar la sesión (opcional)
 // session_unset();
@@ -86,29 +95,45 @@ $nombre = $_SESSION['nombre']; // Asumiendo que el campo se llama "nombre" en el
     </form>
 
     <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') 
+    {
         // Procesar el formulario de solicitud de comando
         $comando = $_POST['comando'];
         $descripcion = $_POST['descripcion'];
         $tipo_comando = $_POST['type_id']; // Nombre del campo del tipo de comando
         $info_adicional = $_POST['info_adicional'];
-    
+
+        $usuario_id = $_SESSION['id'];
+
+        // Verifica si el usuario existe en la tabla usuarios
         $conexion = mysqli_connect('localhost', 'root', '', 'linuxdatabase');
-    
-        // Utiliza la variable $nombre en lugar de $nombreUsuario
-        $sql = "INSERT INTO solicitudes_comandos (comando, descripcion, tipo_comando, informacion_adicional, usuario) 
-                VALUES ('$comando', '$descripcion', '$tipo_comando', '$info_adicional', '$nombre')";
-    
-        if (mysqli_query($conexion, $sql)) {
+        $sql = "SELECT id FROM usuarios WHERE id = '$usuario_id'";
+        $result = mysqli_query($conexion, $sql);
+
+        if (!$result || mysqli_num_rows($result) === 0) {
+            // El usuario no existe en la tabla usuarios
+            die('Error: El usuario no existe en la base de datos.');
+        }
+
+        // Ahora puedes continuar con la inserción después de verificar que el usuario existe
+        $sql_insert = "INSERT INTO solicitudes_comandos (comando, descripcion, tipo_comando, informacion_adicional, usuario_id) 
+                    VALUES ('$comando', '$descripcion', '$tipo_comando', '$info_adicional', '$usuario_id')";
+
+        if (mysqli_query($conexion, $sql_insert)) {
             // Muestra la notificación "Solicitud enviada" si la inserción en la base de datos fue exitosa
             echo '<script>
                     document.getElementById("notification").style.display = "block";
-                  </script>';
+                </script>';
+        } else {
+            // Manejar errores de inserción si es necesario
+            echo 'Error al insertar en la base de datos: ' . mysqli_error($conexion);
         }
+
         mysqli_close($conexion);
     }
     
     ?>
+
 
     <script>
         $(document).ready(function() {

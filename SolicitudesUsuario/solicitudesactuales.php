@@ -1,19 +1,36 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: paginaprincipal.php');
-    exit();
+// Verificar si el usuario está correctamente autenticado
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || empty($_SESSION['id'])) {
+    // Redirige o muestra un mensaje de error
+    die('Error: Usuario no autenticado correctamente.');
 }
 
-$nombreUsuario = $_SESSION['nombre'];
+$usuario_id = $_SESSION['id'];
 
-// Conecta a la base de datos
+// Conectar a la base de datos
 $conexion = mysqli_connect('localhost', 'root', '', 'linuxdatabase');
 
+// Verificar si la conexión fue exitosa
+if (!$conexion) {
+    die('Error en la conexión a la base de datos: ' . mysqli_connect_error());
+}
+
 // Consulta para obtener las solicitudes del usuario actual
-$sql = "SELECT * FROM solicitudes_comandos WHERE usuario = '$nombreUsuario' ORDER BY fecha_creacion DESC";
-$resultado = mysqli_query($conexion, $sql);
+$sql = "SELECT * FROM solicitudes_comandos WHERE usuario_id = ? ORDER BY fecha_creacion DESC";
+
+// Utilizar una consulta preparada
+$stmt = mysqli_prepare($conexion, $sql);
+mysqli_stmt_bind_param($stmt, "i", $usuario_id);
+mysqli_stmt_execute($stmt);
+$resultado = mysqli_stmt_get_result($stmt);
+
+// Verificar si hubo errores en la consulta preparada
+if (!$resultado) {
+    die('Error en la consulta: ' . mysqli_error($conexion));
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +45,6 @@ $resultado = mysqli_query($conexion, $sql);
     <link rel="stylesheet" type="text/css" href="../Styles/StyleBarraDeNavegacion.css">
     <link rel="stylesheet" type="text/css" href="../Styles/StyleTitle.css">
     <link rel="stylesheet" type="text/css" href="../Styles/StylePerfilUsuario.css">
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -53,29 +69,25 @@ $resultado = mysqli_query($conexion, $sql);
                 <th>Información Adicional</th>
                 <th>Fecha de Creación</th>
                 <th>Estado</th>
-
             </tr>
         </thead>
         <tbody>
             <?php
-
             // Antes del bucle while que muestra las solicitudes
-            $conexion = mysqli_connect('localhost', 'root', '', 'linuxdatabase');
             $sql_tipos = "SELECT TypeName FROM Typeslinuxdb WHERE id = ?";
-            $stmt = mysqli_prepare($conexion, $sql_tipos);
-            mysqli_stmt_bind_param($stmt, "i", $type_id);
+            $stmt_tipos = mysqli_prepare($conexion, $sql_tipos);
+            mysqli_stmt_bind_param($stmt_tipos, "i", $type_id);
 
             // Variable para almacenar el resultado de la consulta de tipos
             $tipo_comando = "";
 
-
             while ($row = mysqli_fetch_assoc($resultado)) {
                 $type_id = $row['tipo_comando'];
-                $stmt->bind_param("i", $type_id);
-                $stmt->execute();
-                $stmt->bind_result($tipo_comando);
-                $stmt->fetch();
-            
+                mysqli_stmt_bind_param($stmt_tipos, "i", $type_id);
+                mysqli_stmt_execute($stmt_tipos);
+                mysqli_stmt_bind_result($stmt_tipos, $tipo_comando);
+                mysqli_stmt_fetch($stmt_tipos);
+
                 echo '<tr>';
                 echo '<td>' . $row['comando'] . '</td>';
                 echo '<td>' . $row['descripcion'] . '</td>';
@@ -85,10 +97,12 @@ $resultado = mysqli_query($conexion, $sql);
                 echo '<td>' . $row['estado'] . '</td>';
                 echo '</tr>';
             }
+
+            // Cerrar la consulta preparada de tipos
+            mysqli_stmt_close($stmt_tipos);
             ?>
         </tbody>
     </table>
-
     
     <script>
         $(document).ready(function() {
@@ -96,6 +110,5 @@ $resultado = mysqli_query($conexion, $sql);
             $('#perfil-link').addClass('active');
         });
     </script>
-
 </body>
 </html>

@@ -1,8 +1,15 @@
 <?php
+
+require '../config.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../vendor/autoload.php'; // Ruta al archivo de autoload de PHPMailer
+
 session_start(); // Iniciar sesión o continuar una sesión existente
 
 $registro_exitoso = false;
-$error_registro = false;
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Procesar el formulario de registro de usuarios
@@ -15,38 +22,61 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fecha_nacimiento = $_POST['fecha_nacimiento'];
     $type_id= 1;
 
+    // Crear un código de verificación único
+    $codigo_verificacion = md5(uniqid(rand(), true));
+
     // Conectar a la base de datos
     $conexion = mysqli_connect('localhost', 'root', '', 'linuxdatabase');
 
     // Verificar si la conexión fue exitosa
     if (!$conexion) {
         die('Error en la conexión a la base de datos: ' . mysqli_connect_error());
-    }
+    }    
 
-    // Preparar la consulta SQL para verificar si el usuario ya existe en la tabla "usuarios"
-    $verificar_usuario = "SELECT * FROM usuarios WHERE usuario='$usuario'";
-    $resultado_verificacion = mysqli_query($conexion, $verificar_usuario);
+    $sql = "INSERT INTO usuarios (nombre, apellido, correo, contrasena, genero, fecha_nacimiento, usuario, Type_id, fecha_registro, fecha_ultima_conexion, codigo_verificacion)
+        VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$genero', '$fecha_nacimiento', '$usuario','$type_id', NOW(), NOW(), '$codigo_verificacion')";
 
-    // Verificar si ya existe un usuario con el mismo nombre de usuario
-    if (mysqli_num_rows($resultado_verificacion) > 0) {
-        $error_registro = true;
+    if (mysqli_query($conexion, $sql)) {
+        // Envía el correo de verificación
+        enviarCorreoVerificacion($correo, $nombre, $codigo_verificacion);
+
+        // Redirige o muestra un mensaje de éxito
+        header('Location: registro_exitoso.php');
+        exit();
     } else {
-        // Preparar la consulta SQL para insertar los datos en la tabla "usuarios"
-        $sql = "INSERT INTO usuarios (nombre, apellido, correo, contrasena, genero, fecha_nacimiento, usuario, Type_id, fecha_registro, fecha_ultima_conexion)
-        VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$genero', '$fecha_nacimiento', '$usuario','$type_id', NOW(), NOW())";
-
-        // Ejecutar la consulta
-        if (mysqli_query($conexion, $sql)) {
-            // Los datos se han insertado correctamente
-            $registro_exitoso = true;
-        } else {
-            // Error al insertar los datos
-            $error_registro = true;
-        }
+        // Manejar errores de inserción si es necesario
+        echo 'Error al insertar en la base de datos: ' . mysqli_error($conexion);
     }
 
     // Cerrar la conexión a la base de datos
     mysqli_close($conexion);
+}
+
+
+function enviarCorreoVerificacion($destinatario, $nombre, $codigo_verificacion) {
+    $mail = new PHPMailer(true);
+
+    try {
+
+        // Configuración del remitente
+        $mail->setFrom('Luck.duocuc@gmail.com', 'Luck verification');
+
+        // Configuración del destinatario
+        $mail->addAddress($destinatario, $nombre);
+
+        // Contenido del correo
+        $mail->isHTML(true);
+        $mail->Subject = 'Verificación de Correo Electrónico';
+        $mail->Body = "Hola $nombre,<br><br>
+                       Gracias por registrarte. Por favor, haz clic en el siguiente enlace para verificar tu correo electrónico:<br>
+                       <a href='../LoginRegisterPerfil/verificaremail.php?codigo=$codigo_verificacion'>Verificar Correo Electrónico</a>";
+
+        // Enviar el correo
+        $mail->send();
+    } catch (Exception $e) {
+        // Manejar errores de envío
+        echo 'Error al enviar el correo: ' . $mail->ErrorInfo;
+    }
 }
 ?>
 
@@ -123,7 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
 
                 <button type="submit" class="btn btn-primary">Registrarse</button>
-                <a href="paginaprincipal.php" class="cta-button">Cancelar</a>
+                <a href="../Principal/paginaprincipal.php" class="cta-button">Cancelar</a>
                 
             </form>
         
