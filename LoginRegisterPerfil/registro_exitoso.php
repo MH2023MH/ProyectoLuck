@@ -6,5 +6,7 @@
 </head>
 <body>
     <h1>revisa tu correo para validar tu cuenta</h1>
+
+    <a href="../Principal/paginaprincipal.php">Volver a inicio</a>
 </body>
 </html>
