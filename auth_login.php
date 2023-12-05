@@ -26,12 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = mysqli_real_escape_string($conexion, $password);
 
     // Consulta SQL para buscar al usuario en la base de datos con la contraseña proporcionada
-    $sql = "SELECT * FROM usuarios WHERE usuario = '$username' AND contrasena = '$password'";
+    $sql = "SELECT * FROM usuarios WHERE usuario = '$username' AND contrasena = '$password' AND verificado = 1";
 
     // Ejecutar la consulta
     $result = mysqli_query($conexion, $sql);
 
-    // Verificar si se encontró un usuario con ese nombre y contraseña
+    // Verificar si se encontró un usuario con ese nombre, contraseña y está verificado
     if (mysqli_num_rows($result) > 0) {
         $user = mysqli_fetch_assoc($result);
         
@@ -49,16 +49,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql_actualizar_ultima_conexion = "UPDATE usuarios SET fecha_ultima_conexion = NOW() WHERE usuario = '$username'";
         mysqli_query($conexion, $sql_actualizar_ultima_conexion);
 
-
         header('Location: /LinuxDataBaseWeb/SolicitudesUsuario/solicitudesactuales.php');
         exit();
     } else {
-        // Usuario o contraseña incorrectos
-        $_SESSION['login_error'] = "Usuario o contraseña incorrectos.";
+        // Usuario no verificado, o usuario o contraseña incorrectos
+        $sql_verificacion = "SELECT * FROM usuarios WHERE usuario = '$username'";
+        $result_verificacion = mysqli_query($conexion, $sql_verificacion);
+
+        if (mysqli_num_rows($result_verificacion) > 0) {
+            $user_verificacion = mysqli_fetch_assoc($result_verificacion);
+
+            if ($user_verificacion['verificado'] == 0) {
+                $_SESSION['login_error'] = "Tu cuenta no está verificada. Por favor, verifica tu cuenta antes de iniciar sesión.";
+            } else {
+                $_SESSION['login_error'] = "Usuario o contraseña incorrectos.";
+            }
+        } else {
+            $_SESSION['login_error'] = "Usuario o contraseña incorrectos.";
+        }
+
         header('Location: /LinuxDataBaseWeb/Principal/paginaprincipal.php');
     }
 
-    
     // Cerrar la conexión a la base de datos
     mysqli_close($conexion);
 }
