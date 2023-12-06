@@ -18,30 +18,34 @@ if (isset($_SESSION['login_error'])) {
 <html lang="es">
 <head> <!--Metadatos y Estilos de la pagina-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Pagina principal</title>
+    <title>Pagina principal Luck</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../Styles/StylePaginaPrincipal.css">
     <link rel="stylesheet" type="text/css" href="../Styles/StyleBarraDeNavegacion.css">
     <link rel="stylesheet" type="text/css" href="../Styles/StyleVideoPlayer.css">
     <link rel="stylesheet" type="text/css" href="../Styles/StyleCarousel.css">
-    <link rel="stylesheet" type="text/css" href="../Styles/StyleTitle.css">
-    <link rel="stylesheet" type="text/css" href="../Styles/Stylestitle2.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../Styles/StyleTitle.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../Styles/Stylestitle2.css"> -->
+    <link rel="stylesheet" type="text/css" href="../Styles/StyleFooter.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="/LinuxDataBaseWeb/Scripts/AbrirVentanaModal.js"></script>
+    <!-- <script src="/LinuxDataBaseWeb/Scripts/AbrirVentanaModal.js"></script> -->
     <script src="/LinuxDataBaseWeb/Scripts/navigationbar.js"></script>
-    <script src="/LinuxDataBaseWeb/Scripts/title.js"></script>
+    <!-- <script src="/LinuxDataBaseWeb/Scripts/title.js"></script> -->
     <script src="/LinuxDataBaseWeb/Scripts/videointroductorio.js"></script>
     <script src="/LinuxDataBaseWeb/Scripts/carousel.js"></script>  
     
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 
 
 
@@ -54,15 +58,35 @@ if (isset($_SESSION['login_error'])) {
     
     // include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title2.html';
     ?>
-    <div style="background-color: white; text-align: center;">
-            <!-- Aquí puedes poner tu imagen -->
-            <img src="\LinuxDataBaseWeb\images\LogoDuocLuck.png" alt="mascota de la plataforma">
-        </div>
+
+
+    <!-- Logo Duoc con enlace a su pagina principal-->
+    <a href="https://www.duoc.cl" class="logo" target="_blank">
+        <img class="logo" src="\LinuxDataBaseWeb\images\LogoDuocLuck.png" alt="logo de la plataforma">
+    </a>
+
+
+    <!-- Texto en el centro -->
+    <div class="center-text">
+        <p class="center-text">DuocUC Luck</p>
+    </div>
+
     <?php
     
     include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title.html';
     // include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title2.html';
     ?>
+
+
+
+
+
+    <!-- Nueva sección para separar visualmente la imagen de fondo del carrusel -->
+    <div class="background-separator"></div>
+
+
+
+
 
     <!-- Contenido de la página -->
     <header class="paginaprincipal">
@@ -70,65 +94,22 @@ if (isset($_SESSION['login_error'])) {
         <p>Tu plataforma de ayuda para Linux y sus distribuciones</p>
     </header>
 
-
-    
-    <!-- seccion informativa: info de la pagina con imagen de la mascota al medio -->
-    <!-- <section class="informacionPP">
-        <div>
-            <div>
-                <p>
-                    Nuestro sitio web es una plataforma versátil diseñada para entusiastas y profesionales de Linux. 
-                    Ofrecemos una amplia enciclopedia que te permitirá aprovechar al máximo tu experiencia con Linux.
-                </p>
-            </div>
-            <div>
-                <p>
-                    ¿Necesitas acceder rápidamente a comandos de Linux específicos? Con nuestra herramienta de búsqueda, 
-                    puedes encontrar fácilmente los comandos que necesitas, con descripciones detalladas para garantizar un uso eficaz.
-                </p>
-            </div>
-        </div>
-        <div>
-            
-            <img src="\LinuxDataBaseWeb\images\luck.jpg" alt="mascota de la plataforma">
-        </div>
-        <div>
-            <div>
-                <p>
-                    Si te registras, podras contribuir a nuestra comunidad añadiendo tus propios comandos. 
-                    Esta función te permite compartir tus conocimientos y ayudar a otros usuarios a descubrir nuevos comandos útiles.
-                </p>
-            </div>
-            <div>
-                <p>
-                    Ya sea que seas un administrador de sistemas, un desarrollador o simplemente un amante de Linux, 
-                    nuestra plataforma se adaptará a tus necesidades y te ayudará a aprovechar al máximo tu experiencia con Linux.
-                </p>
-            </div>
-        </div>
-    </section> -->
-
-
-
     <!-- incluir: Carrusel de imagenes -->
     <?php
     include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\carousel.html';
     ?>
 
 
-    <!-- Pie de pagina: -->
-    <div style="height: 100px;"></div>
-    <footer style="text-align: center; position: fixed; bottom: 0; width: 100%; height: 5%;">
-        <p>Contacto: luck@duocuc.cl</p>
-    </footer>
+    <?php include '..\ArquitecturaGeneral\footer.html'; ?>
+
 
     <!-- Video player: video introductorio -->
-    <div class="video-player">
+    <!-- <div class="video-player">
         <video controls>
             <source src="\LinuxDataBaseWeb\videos\videointroduccion.mp4" type="video/mp4">
             Tu navegador no admite la reproducción de videos.
         </video>
-    </div>
+    </div> -->
 
 
 
@@ -139,6 +120,14 @@ if (isset($_SESSION['login_error'])) {
             $('#inicio-link').addClass('active');
         });
     </script>
+
+    <script>
+    $(document).ready(function(){
+        // Simula clic en el botón de despliegue de Contáctanos
+        $('.navbar-toggler.heading').trigger('click');
+    });
+    </script>
+
 
 </body>
 </html>

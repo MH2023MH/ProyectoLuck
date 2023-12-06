@@ -8,15 +8,8 @@
 ╚═╝░░░░░░╚═════╝░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═════╝░ */
 
 
-/* Vincula la fuente personalizada */
-/* @font-face {
-    font-family: 'Glitch Smasher'; 
-    src: url('Fonts/glitch-smasher-font/GlitchSmasherDemo-K7KZZ.otf') format('opentype'); 
-    font-weight: normal;
-    font-style: normal;
-} */
 
-
+/* Estilos generales de fuente personalizada */
 @font-face {
     font-family: 'Angas Bold'; 
     src: url('Fonts/angas/angas_v3_bold_italic.otf') format('opentype'); 
@@ -44,15 +37,20 @@
 
 
 
-/*Eestilos de: paginaprincipal.php*/
+
+/* Estilos específicos de la página principal */
 body.paginaprincipal {
     font-family: 'angas bold', monospace;
-    /* font-family: Arial, sans-serif; */
     line-height: 1.6;
     margin: 0;
     padding: 0;
     background-color: black;
+    background-image: url('/LinuxDataBaseWeb/images/motivacion.jpg') !important;
+    background-position: center top; /* Cambia a top para que la imagen choque con la parte superior */
+    background-size: auto 70%; /* Cambia a auto 100% para ajustarse al ancho y chocar con la altura */
+    background-repeat: no-repeat;
 }
+
 
 header.paginaprincipal {
     background-color: black;
@@ -61,28 +59,35 @@ header.paginaprincipal {
     color: white;
 }
 
-section.informacionPP {
-    background-color: white;
-    padding: 40px;
-    max-width: 1800px; /* Establece un ancho máximo */
-    margin: 0 auto; /* Centra el contenido horizontalmente */
-    text-align: center;
-    border-radius: 20px;
-    display: flex;
-}
-
-
-section.informacionPP > div {
-    flex: 1;
-}
-
-
-p {
-    font-size: 18px;
-}
-
-
-section.informacionPP img {
+.logo {
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    z-index: 1;
     width: 300px; /* Ajusta el valor según el tamaño deseado */
-    height: auto; /* Mantén la proporción original de la imagen */
+    height: auto;
 }
+
+.center-text {
+    font-family: 'Merriweather', serif;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    text-align: center;
+    z-index: 1;
+}
+
+.background-separator {
+    height: 900px;
+    background-color: transparent;
+    position: relative; /* Cambia a relative en lugar de absolute */
+    z-index: 0; /* Ajusta el índice z según sea necesario */
+}
+
+
+
+
+

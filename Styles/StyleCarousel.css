@@ -85,7 +85,7 @@
     }
     
     .card-img-top {
-        width: 600px; /* Ancho fijo */
+        width: 100%; /* Ancho fijo */
         height: 500px; /* Alto fijo */
       }
       

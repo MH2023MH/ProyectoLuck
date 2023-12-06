@@ -95,5 +95,3 @@ function enviarCorreoVerificacion($destinatario, $nombre, $codigo_verificacion) 
 }
     
 ?> 
-
-<!-- <a href="../Principal/paginaprincipal.php">Volver a inicio</a> -->

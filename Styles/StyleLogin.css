@@ -40,32 +40,44 @@ body.buscadorweb {
     /* font-family: Arial, sans-serif; */
     background-color: black;
 }
-section.login{
+section.login {
+    position: relative; /* Necesario para posicionar el pseudo-elemento correctamente */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    min-height: 100vh;
     width: 100%;
-    
-    /* background: url('https://i.pinimg.com/originals/13/31/20/13312045ba691fcb8d1fbae330d937e0.gif')no-repeat; */
-    background-image: url('../Images/3472281.jpg');
+    background-image: url('../Images/FondoLuckLogin.jpg');
     background-position: center;
     background-size: cover;
 }
-.form-box{
+
+section.login::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Ajusta el valor al nivel de oscurecimiento deseado */
+    z-index: 1; /* Asegura que esté por encima de la imagen de fondo */
+}
+
+.form-box {
     position: relative;
     width: 400px;
     height: 450px;
     background: transparent;
-    border: 2px solid rgba(255,255,255,0.5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     backdrop-filter: blur(15px);
     display: flex;
     justify-content: center;
     align-items: center;
-	margin-top: -200px;
-
+    margin-top: -200px;
+    z-index: 2; /* Asegura que esté por encima del fondo oscuro */
 }
+
 h2{
     font-size: 2em;
     color: #fff;
