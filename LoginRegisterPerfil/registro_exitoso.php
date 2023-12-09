@@ -1,12 +1,16 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Registro Exitoso</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../Styles/StyleRegistroExitoso.css">
 </head>
 <body>
-    <h1>revisa tu correo para validar tu cuenta</h1>
-
-    <a href="../Principal/paginaprincipal.php">Volver a inicio</a>
+    <div class="content">
+        <h1>Revisa tu correo para completar tu registro</h1>
+        <a href="../Principal/paginaprincipal.php">Volver a inicio</a>
+    </div>
 </body>
 </html>

@@ -26,7 +26,7 @@ if (isset($_SESSION['login_error'])) {
 
     <link rel="stylesheet" type="text/css" href="../Styles/StyleBuscadorWeb.css">
     <link rel="stylesheet" type="text/css" href="../Styles/StyleBarraDeNavegacion.css">
-    <link rel="stylesheet" type="text/css" href="../Styles/StyleTitle.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../Styles/StyleTitle.css"> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -34,7 +34,9 @@ if (isset($_SESSION['login_error'])) {
     <script src="/LinuxDataBaseWeb/Scripts/AbrirVentanaModal.js"></script>
     <script src="/LinuxDataBaseWeb/Scripts/navigationbar.js"></script>
     <script src="/LinuxDataBaseWeb/Scripts/buscadorweb.js"></script>
-    <script src="/LinuxDataBaseWeb/Scripts/title.js"></script>
+    <script src="/LinuxDataBaseWeb/Scripts/InformacionBuscadorComando.js"></script>
+
+    <!-- <script src="/LinuxDataBaseWeb/Scripts/title.js"></script> -->
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -43,22 +45,34 @@ if (isset($_SESSION['login_error'])) {
 <body class="buscadorweb">
     <?php
     include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\navigationbar.html';
-    include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title.html';
+    // include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title.html';
     ?>
     <!-- <div class="navbar">
         <a href="/LinuxDataBaseWeb/Principal/paginaprincipal.php" class="boton-blanco">Volver pagina principal</a>
         
         <a href="#" class="button" onclick="openLoginModal()">ingresar</a>
     </div> -->
-    <form id="formularioBusqueda" clase="formularioBusqueda">
-        <label for="busqueda">Busca tu comando aqui:</label>
+    <form id="formularioBusqueda" class="formularioBusqueda" onmouseover="mostrarMensaje(event)" onmouseout="ocultarMensaje()">
+        <label for="busqueda">Busca tu comando aquí:</label>
         <input type="text" name="busqueda" id="busqueda" required>
-        <!-- <button type="submit">Buscar</button> -->
     </form>
 
-    <div id="resultadosBusqueda">
-        
+    <!-- div que se mostrará al pasar el mouse por encima -->
+    <div id="mensajeCursor" style="position: absolute; display: none; background-color: #fff; padding: 10px; border: 1px solid #ccc; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif;">
+        <strong style="font-size: 16px;">Cómo usar el buscador:</strong>
+        <ul style="list-style-type: disc; margin-top: 5px; margin-bottom: 0;">
+            <li>Puedes buscar un comando directamente para ver su información</li>
+            <li>Puedes buscar probando con descripciones (por ejemplo: "create file", "change directory", etc).</li>
+            <li>Puedes buscar por tipo de comando ("Basic", "Configuration", etc).</li>
+        </ul>
+        <div style="margin-top: 20px;"></div>
+        <strong style="font-size: 16px; color: green;"> Tambien prueba el Chatbot especializado en consultas de Linux, ubicado en la esquina inferior</strong>
     </div>
+
+
+
+    <!-- div donde se generaran los resultados de la busqueda -->
+    <div id="resultadosBusqueda"></div>
 
 
     <script>

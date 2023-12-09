@@ -1,8 +1,9 @@
+<link rel="stylesheet" type="text/css" href="../Styles/StyleBarraDeNavegacion.css">
+<script src="..\Scripts\navigationbar.js"></script>
 <?php
 include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\navigationbar.html';
 ?>
-<link rel="stylesheet" type="text/css" href="../Styles/StyleBarraDeNavegacion.css">
-<script src="..\Scripts\navigationbar.js"></script>
+
 
 <?php
 /**

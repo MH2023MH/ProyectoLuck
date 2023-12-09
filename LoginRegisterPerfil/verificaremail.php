@@ -44,7 +44,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Resto del código HTML -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Verifica tu cuenta</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../Styles/StyleVerificarEmail.css">
 </head>
 <body>
     <div class="container">
@@ -52,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <form class="col-3" action="" method="POST">
                 <h2>Verificar Cuenta</h2>
                 <div class="mb-3">
-                    <label for="c" class="form-label">Código de Verificación</label>
+                    <label for="c" class="form-label">Codigo de Verificación enviado al correo</label>
                     <input type="text" class="form-control" id="c" name="codigo" required>
                     <input type="hidden" class="form-control" id="email" name="email" value="<?php echo htmlspecialchars($correo);?>">
                 </div>

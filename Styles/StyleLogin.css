@@ -79,6 +79,7 @@ section.login::before {
 }
 
 h2{
+    font-family: 'angas bold', monospace;
     font-size: 2em;
     color: #fff;
     text-align: center;

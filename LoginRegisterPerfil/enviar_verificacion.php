@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql = "INSERT INTO usuarios (nombre, apellido, correo, contrasena, genero, fecha_nacimiento, usuario, Type_id, fecha_registro, fecha_ultima_conexion, codigo_verificacion)
         VALUES ('$nombre', '$apellido', '$correo', '$contrasena', '$genero', '$fecha_nacimiento', '$usuario','$type_id', NOW(), NOW(), '$codigo_verificacion')";
 
+
     if (mysqli_query($conexion, $sql)) {
         // Envía el correo de verificación
         enviarCorreoVerificacion($correo, $nombre, $codigo_verificacion);

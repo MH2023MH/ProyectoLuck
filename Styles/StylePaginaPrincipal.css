@@ -1,4 +1,3 @@
-
 /* 
 ███████╗██╗░░░██╗███████╗███╗░░██╗████████╗███████╗░██████╗
 ██╔════╝██║░░░██║██╔════╝████╗░██║╚══██╔══╝██╔════╝██╔════╝
@@ -44,11 +43,11 @@ body.paginaprincipal {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: white;
     background-image: url('/LinuxDataBaseWeb/images/motivacion.jpg') !important;
     background-position: center top; /* Cambia a top para que la imagen choque con la parte superior */
-    background-size: auto 70%; /* Cambia a auto 100% para ajustarse al ancho y chocar con la altura */
-    background-repeat: no-repeat;
+    background-size: 100%; /* Cambia a auto 100% para ajustarse al ancho y chocar con la altura */
+    background-repeat:no-repeat;
 }
 
 
@@ -75,10 +74,16 @@ header.paginaprincipal {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 70px;
+    font-size: 50px;
     text-align: center;
     z-index: 1;
+    backdrop-filter: blur(20px); /* Ajusta el valor del desenfoque según tu preferencia */
+    border-radius: 10px; /* Ajusta según sea necesario */
+    padding-inline: 50px; /* Reduje el espacio alrededor del texto */
+    white-space: nowrap; 
+    border-radius: 100px;/* Hace que las palabras no se dividan en varias líneas */
 }
+
 
 .background-separator {
     height: 900px;
@@ -87,7 +92,6 @@ header.paginaprincipal {
     z-index: 0; /* Ajusta el índice z según sea necesario */
 }
 
-
-
-
-
+.sub-link {
+    font-size: 25px;
+}

@@ -9,19 +9,14 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
-body{
-	font-family: 'Roboto', sans-serif;
-	background-color: black;
-}
-* {
-	margin: 0;
-	padding: 0;
-}
+
 i {
 	margin-right: -2px;
 }
 /*----------bootstrap-navbar-css------------*/
-
+.navbar-collapse, .nav-link, .navbar-expand-custom, .navbar-mainbg, .navbar-nav, .navbar-toggler {
+	padding: 0px;
+}
 .navbar-mainbg{
 	background-color: #5161ce;
 	padding: 0px;
@@ -181,6 +176,3 @@ i {
 .nav-link i {
     margin-right: 5px; /* Ajusta el valor según tu preferencia */
 }
-
-
-
