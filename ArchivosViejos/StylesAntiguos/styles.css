@@ -1,0 +1,551 @@
+
+/* 
+███████╗██╗░░░██╗███████╗███╗░░██╗████████╗███████╗░██████╗
+██╔════╝██║░░░██║██╔════╝████╗░██║╚══██╔══╝██╔════╝██╔════╝
+█████╗░░██║░░░██║█████╗░░██╔██╗██║░░░██║░░░█████╗░░╚█████╗░
+██╔══╝░░██║░░░██║██╔══╝░░██║╚████║░░░██║░░░██╔══╝░░░╚═══██╗
+██║░░░░░╚██████╔╝███████╗██║░╚███║░░░██║░░░███████╗██████╔╝
+╚═╝░░░░░░╚═════╝░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚══════╝╚═════╝░ */
+
+
+/* Vincula la fuente personalizada */
+/* @font-face {
+    font-family: 'Glitch Smasher'; 
+    src: url('Fonts/glitch-smasher-font/GlitchSmasherDemo-K7KZZ.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+} */
+
+
+@font-face {
+    font-family: 'Angas Bold'; 
+    src: url('Fonts/angas/angas_v3_bold_italic.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+██████╗░░█████╗░░██████╗░██╗███╗░░██╗░█████╗░
+██╔══██╗██╔══██╗██╔════╝░██║████╗░██║██╔══██╗
+██████╔╝███████║██║░░██╗░██║██╔██╗██║███████║
+██╔═══╝░██╔══██║██║░░╚██╗██║██║╚████║██╔══██║
+██║░░░░░██║░░██║╚██████╔╝██║██║░╚███║██║░░██║
+╚═╝░░░░░╚═╝░░╚═╝░╚═════╝░╚═╝╚═╝░░╚══╝╚═╝░░╚═╝
+
+██████╗░██████╗░██╗███╗░░██╗░█████╗░██╗██████╗░░█████╗░██╗░░░░░
+██╔══██╗██╔══██╗██║████╗░██║██╔══██╗██║██╔══██╗██╔══██╗██║░░░░░
+██████╔╝██████╔╝██║██╔██╗██║██║░░╚═╝██║██████╔╝███████║██║░░░░░
+██╔═══╝░██╔══██╗██║██║╚████║██║░░██╗██║██╔═══╝░██╔══██║██║░░░░░
+██║░░░░░██║░░██║██║██║░╚███║╚█████╔╝██║██║░░░░░██║░░██║███████╗
+╚═╝░░░░░╚═╝░░╚═╝╚═╝╚═╝░░╚══╝░╚════╝░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝ */
+
+
+
+
+/*Eestilos de: paginaprincipal.php*/
+body.paginaprincipal {
+    font-family: 'angas bold', monospace;
+    /* font-family: Arial, sans-serif; */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+header.paginaprincipal {
+    background-color: black;
+    padding: 1px;
+    text-align: center;
+    color: white;
+}
+
+section.informacionPP {
+    background-color: white;
+    padding: 40px;
+    max-width: 1800px; /* Establece un ancho máximo */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    text-align: center;
+    border-radius: 20px;
+}
+
+
+
+h2.informacionPP {
+    font-size: 24px;
+    color:black;
+}
+
+p {
+    font-size: 18px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+.center-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.features {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.feature {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.feature img {
+    max-width: 100%;
+}
+
+.testimonial {
+    background-color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+.testimonial img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.testimonial p {
+    font-style: italic;
+    font-size: 18px;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+/* Estilo para los botones de login y register */
+.navbar a.button {
+    background-color: black;
+    border-radius: 20px;
+}
+
+.navbar .boton-blanco {
+    background-color: black;
+    padding: 8px 16px; /* Ajusta el relleno según tus preferencias */
+    float: left; /* Alinea el botón a la izquierda */
+    margin-right: 10px; /* Agrega un margen a la derecha si lo deseas */
+    border-radius: 20px;
+}
+
+.navbar a.button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para la ventana modal de login */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%; /* Cambiamos el ancho del modal al 20% del ancho de la pantalla */
+    max-height: 90%; /* Establecemos una altura mÃ¡xima del 70% del alto de la pantalla */
+    overflow-y: auto; /* Habilitamos el scroll vertical en caso de que el contenido exceda la altura mÃ¡xima */
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+
+    /* Nuevos estilos para centrar el contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* Estilos para los campos de texto y etiquetas */
+.modal label, .modal input {
+    width: 100%; /* Establecemos un ancho del 100% para que ocupen todo el espacio disponible */
+    margin-bottom: 10px;
+}
+
+.modal button {
+    margin-top: 20px;
+}
+
+/* Nuevos estilos para centrar el botón de "Ingresar" */
+.modal button[type="submit"] {
+    width: 100%; /* El botón ocupa todo el ancho disponible */
+    margin-top: 20px; /* Agregamos un margen superior para separarlo de los campos de texto */
+    align-self: center; /* Centramos el botón horizontalmente */
+    margin-bottom: 10px; /* Agregamos un margen inferior para separarlo del botón de Google */
+}
+
+
+/* Estilos para el contenedor del botón "Ingresar con Google" */
+.login-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el botón "Ingresar con Google" */
+.login-button-container .btn {
+    width: 190%;
+}
+
+/* Estilos para el botón "Registrarse" */
+.register-button {
+    display: block;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 2px 2px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Estilos para el texto "¿Aún no tienes cuenta? Regístrate" */
+.register-text {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+.shadow-effect {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+border:1px solid #ECECEC;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.10), 0 15px 12px rgba(0,0,0,0.02);
+}
+#customers-testimonials .shadow-effect p {
+    font-family: inherit;
+    font-size: 17px;
+    line-height: 1.5;
+    margin: 0 0 17px 0;
+    font-weight: 300;
+}
+.testimonial-name {
+    margin: -17px auto 0;
+    display: table;
+    width: auto;
+    background: #3190E7;
+    padding: 9px 35px;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 9px 18px rgba(0,0,0,0.12), 0 5px 7px rgba(0,0,0,0.05);
+}
+#customers-testimonials .item {
+    text-align: center;
+    padding: 50px;
+        margin-bottom:80px;
+    opacity: .2;
+    -webkit-transform: scale3d(0.8, 0.8, 1);
+    transform: scale3d(0.8, 0.8, 1);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+#customers-testimonials .owl-item.active.center .item {
+    opacity: 1;
+    -webkit-transform: scale3d(1.0, 1.0, 1);
+    transform: scale3d(1.0, 1.0, 1);
+}
+.owl-carousel .owl-item img {
+    transform-style: preserve-3d;
+    max-width: 90px;
+    margin: 0 auto 17px;
+}
+#customers-testimonials.owl-carousel .owl-dots .owl-dot.active span,
+#customers-testimonials.owl-carousel .owl-dots .owl-dot:hover span {
+    background: #3190E7;
+    transform: translate3d(0px, -50%, 0px) scale(0.7);
+}
+#customers-testimonials.owl-carousel .owl-dots{
+display: inline-block;
+width: 100%;
+text-align: center;
+}
+#customers-testimonials.owl-carousel .owl-dots .owl-dot{
+display: inline-block;
+}
+#customers-testimonials.owl-carousel .owl-dots .owl-dot span {
+    background: #3190E7;
+    display: inline-block;
+    height: 20px;
+    margin: 0 2px 5px;
+    transform: translate3d(0px, -50%, 0px) scale(0.3);
+    transform-origin: 50% 50% 0;
+    transition: all 250ms ease-out 0s;
+    width: 20px;
+}
+
+
+
+/* 
+██████╗░███████╗░██████╗░██╗░██████╗████████╗██████╗░░█████╗░██████╗░
+██╔══██╗██╔════╝██╔════╝░██║██╔════╝╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗
+██████╔╝█████╗░░██║░░██╗░██║╚█████╗░░░░██║░░░██████╔╝███████║██████╔╝
+██╔══██╗██╔══╝░░██║░░╚██╗██║░╚═══██╗░░░██║░░░██╔══██╗██╔══██║██╔══██╗
+██║░░██║███████╗╚██████╔╝██║██████╔╝░░░██║░░░██║░░██║██║░░██║██║░░██║
+╚═╝░░╚═╝╚══════╝░╚═════╝░╚═╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░░╚═╝
+
+░█████╗░██╗░░░██╗███████╗███╗░░██╗████████╗░█████╗░
+██╔══██╗██║░░░██║██╔════╝████╗░██║╚══██╔══╝██╔══██╗
+██║░░╚═╝██║░░░██║█████╗░░██╔██╗██║░░░██║░░░███████║
+██║░░██╗██║░░░██║██╔══╝░░██║╚████║░░░██║░░░██╔══██║
+╚█████╔╝╚██████╔╝███████╗██║░╚███║░░░██║░░░██║░░██║
+░╚════╝░░╚═════╝░╚══════╝╚═╝░░╚══╝░░░╚═╝░░░╚═╝░░╚═╝ */
+
+
+
+/* Estilos pagina: registrarcuenta.php */
+body.registrarcuenta {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.success-message {
+    display: none;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+/*
+██████╗░███████╗██████╗░███████╗██╗██╗░░░░░  ██╗░░░██╗░██████╗██╗░░░██╗░█████╗░██████╗░██╗░█████╗░
+██╔══██╗██╔════╝██╔══██╗██╔════╝██║██║░░░░░  ██║░░░██║██╔════╝██║░░░██║██╔══██╗██╔══██╗██║██╔══██╗
+██████╔╝█████╗░░██████╔╝█████╗░░██║██║░░░░░  ██║░░░██║╚█████╗░██║░░░██║███████║██████╔╝██║██║░░██║
+██╔═══╝░██╔══╝░░██╔══██╗██╔══╝░░██║██║░░░░░  ██║░░░██║░╚═══██╗██║░░░██║██╔══██║██╔══██╗██║██║░░██║
+██║░░░░░███████╗██║░░██║██║░░░░░██║███████╗  ╚██████╔╝██████╔╝╚██████╔╝██║░░██║██║░░██║██║╚█████╔╝
+╚═╝░░░░░╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝╚══════╝  ░╚═════╝░╚═════╝░░╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝╚═╝░╚════╝░ */
+
+/* Estilos perfilusuario.php */
+
+body.perfilusuario {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+
+
+/* 
+██████╗░██╗░░░██╗░██████╗░█████╗░░█████╗░██████╗░░█████╗░██████╗░  ░██╗░░░░░░░██╗███████╗██████╗░
+██╔══██╗██║░░░██║██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ░██║░░██╗░░██║██╔════╝██╔══██╗
+██████╦╝██║░░░██║╚█████╗░██║░░╚═╝███████║██║░░██║██║░░██║██████╔╝  ░╚██╗████╗██╔╝█████╗░░██████╦╝
+██╔══██╗██║░░░██║░╚═══██╗██║░░██╗██╔══██║██║░░██║██║░░██║██╔══██╗  ░░████╔═████║░██╔══╝░░██╔══██╗
+██████╦╝╚██████╔╝██████╔╝╚█████╔╝██║░░██║██████╔╝╚█████╔╝██║░░██║  ░░╚██╔╝░╚██╔╝░███████╗██████╦╝
+╚═════╝░░╚═════╝░╚═════╝░░╚════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ░░░╚═╝░░░╚═╝░░╚══════╝╚═════╝░ */
+
+
+/* buscador web */
+
+body.buscadorweb {
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+h1.buscadorweb {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Glitch Smasher',sans-serif;
+}
+
+
+#formularioBusqueda {
+    text-align: center;
+}
+
+#busqueda {
+    width: 300px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#resultadosBusqueda {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Estilo para cada resultado */
+.resultado {
+    background-color: white;
+    border: 5px solid white;
+    margin: 10px;
+    padding: 10px;
+    min-width: 100px;
+    border-radius: 10px; /* Agregar esquinas redondeadas */
+}
+
+.command {
+    font-weight: bold;
+}
+
+.tipo {
+    color: #007bff;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+/* Estilo para los botones de login y register */
+.navbar a.button {
+    background-color: black;
+    border-radius: 20px;
+}
+
+.navbar .boton-blanco {
+    background-color: black;
+    padding: 8px 16px; /* Ajusta el relleno según tus preferencias */
+    float: left; /* Alinea el botón a la izquierda */
+    margin-right: 10px; /* Agrega un margen a la derecha si lo deseas */
+    border-radius: 20px;
+}
+
+.navbar a.button:hover {
+    background-color: #45a049;
+}
+
+

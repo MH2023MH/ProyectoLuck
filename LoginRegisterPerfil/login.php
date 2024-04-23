@@ -1,6 +1,6 @@
 <?php
 include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\navigationbar.html';
-include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title.html'
+// include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title.html'
 
 ?>
 
@@ -12,14 +12,16 @@ include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title.html'
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="\LinuxDataBaseWeb\styles1.css">
-    <link rel="stylesheet" href="\LinuxDataBaseWeb\styles2.css">
-    <link rel="stylesheet" href="\LinuxDataBaseWeb\styles3.css">
+
+    <link rel="stylesheet" type="text/css" href="../Styles/StyleBarraDeNavegacion.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../Styles/StyleTitle.css"> -->
+    <link rel="stylesheet" type="text/css" href="../Styles/StyleLogin.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="/LinuxDataBaseWeb/Scripts/navigationbar.js"></script>
-    <script src="/LinuxDataBaseWeb/Scripts/title.js"></script>
+    <!-- <script src="/LinuxDataBaseWeb/Scripts/title.js"></script> -->
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -30,28 +32,6 @@ include 'C:\xampp\htdocs\LinuxDataBaseWeb\ArquitecturaGeneral\title.html'
     <section class="login">
         <div class="form-box">
             <div class="form-value">
-                <!-- <form action="">
-                    <h2>Login</h2>
-                    <div class="inputbox">
-                        <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email" required>
-                        <label for="">Email</label>
-                    </div>
-                    <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
-                        <label for="">Password</label>
-                    </div>
-                    <div class="forget">
-                        <label for=""><input type="checkbox">Remember Me  <a href="#">Forget Password</a></label>
-                      
-                    </div>
-                    <button>Log in</button>
-                    <div class="register">
-                        <p>Don't have a account <a href="#">Register</a></p>
-                    </div>
-                </form> -->
-
 
                 <form action="/LinuxDataBaseWeb/auth_login.php" method="POST" onsubmit="console.log('Form submitted.');">
                     <h2>Login</h2>

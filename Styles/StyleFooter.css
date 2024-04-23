@@ -1,0 +1,117 @@
+
+.footer {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    --font-size: 1;
+    --wp-admin-theme-color: #007cba;
+    --wp-admin-theme-color-darker-10: #006ba1;
+    --wp-admin-theme-color-darker-20: #005a87;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    display: block;
+    background: #1a1a1a !important;
+    color: #fff;
+    padding: 40px;
+    background-color: black;
+
+}
+
+
+
+.bg-dark {
+    background-color: #1a1a1a !important;
+}
+
+.heading {
+    border-bottom: solid 1px rgba(255, 184, 0, 1) !important;
+    padding-left: 0;
+    padding-bottom: 0px;
+    margin-bottom: 15px;
+    border-width: 0 0 1px 0;
+    border-radius: 0;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading h3 {
+    color: rgba(255, 184, 0, 1) !important;
+    border-bottom: solid 8px rgba(255, 184, 0, 1) !important;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    display: inline-flex;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+.btn-primary, .btn-primary-ad, .btn-secondary, .btn-danger {
+    font-size: .89rem !important;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600 !important;
+}
+
+.btn {
+    border-radius: 100px;
+    text-transform: uppercase;
+    margin: 1.25rem 0;
+    display: inline-flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    justify-content: center;
+    font-size: 1rem;
+    border-width: 2px !important;
+    font-weight: bold;
+    text-decoration: none;
+    font-style: normal;
+}
+
+.bg-dark * {
+    color: #fff;
+    border-color: #fff;
+}
+
+footer {
+    position: relative; /* Cambia a relative en lugar de absolute */
+    z-index: 1; /* Ajusta el índice z según sea necesario */
+    margin-top: 20px; /* Ajusta según sea necesario para evitar superposiciones */
+}

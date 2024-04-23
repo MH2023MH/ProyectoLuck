@@ -37,10 +37,10 @@
             // Verificar si el usuario está autenticado
             if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
                 echo '<li class="nav-item">';
-                echo '<a id="perfil-link" class="nav-link" href="/LinuxDataBaseWeb/LoginRegisterPerfil/perfilusuario.php"><i class="fa-solid fa-user"></i>Perfil</a>';
+                echo '<a id="perfil-link" class="nav-link" href="/LinuxDataBaseWeb/SolicitudesUsuario/solicitudesactuales.php"><i class="fa-solid fa-user"></i>Solicitudes actuales</a>';
                 echo '</li>';
                 echo '<li class="nav-item">';
-                echo '<a id="newcommand-link" class="nav-link" href="/LinuxDataBaseWeb/Principal/nuevocomando.php"><i class="fa-solid fa-plus"></i>Solicitud para agregar comando</a>';
+                echo '<a id="newcommand-link" class="nav-link" href="/LinuxDataBaseWeb/SolicitudesUsuario/nuevocomando.php"><i class="fa-solid fa-plus"></i>Solicitud para agregar comando</a>';
                 echo '</li>';
                 echo '<li class="nav-item">';
                 echo '<a id="logout-link" class="nav-link" href="/LinuxDataBaseWeb/logout.php"><i class="fa-solid fa-sign-out"></i>Salir</a>';
@@ -51,6 +51,9 @@
                 echo '</li>';
             }
             ?>
+            <li class="nav-item">
+                <a id="forum-link" class="nav-link" href="\LinuxDataBaseWeb\phpBB3\index.php"><i class="fa-solid fa-magnifying-glass"></i>Abrir Foro</a>
+            </li>
         </ul>
     </div>
 </nav>
