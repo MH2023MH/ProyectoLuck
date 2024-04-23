@@ -29,12 +29,5 @@ $google_client->addScope('profile');
 
 
 <?php
-// config.php
-define('SMTP_HOST', 'smtp.gmail.com');
-define('SMTP_PORT', 587);
-define('SMTP_USER', 'Luck.duocuc@gmail.com');
-define('SMTP_PASSWORD', 'YWgQXlOWjiZDwv');
-define('SMTP_SECURE', 'tls');
-define('SMTP_FROM_EMAIL', 'Luck.duocuc@gmail.com');
-define('SMTP_FROM_NAME', 'Luck verification');
+//Contraseñas borradas para mantener privacidad, se encuentran en clon privado
 ?>
